@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'carrierwave'
+gem 'dotenv-rails'
+gem 'fog'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -34,7 +36,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'sqlite3'
+  gem 'byebug',platform: :mri
+end
+
+group :production do
+  gem 'pg', '0.18.4'
 end
 
 group :development do
